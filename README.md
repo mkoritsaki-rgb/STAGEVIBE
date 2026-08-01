@@ -1,1 +1,1 @@
-Live Demo: https://mywebprojects.infinityfreeapp.com/project5/
+Live Demo: https://mairikantaprojects.tech/project6/index.html
