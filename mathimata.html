@@ -1,70 +1,98 @@
-<html>
+<!DOCTYPE html>
+<html lang="el">
 <head>
-<title> Τα μαθήματα της σχολής </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title"> Τα μαθήματα της σχολής </title>
 <style>
 body {
-background-color:#800020;
-font-family: Arial;
- margin:0;
- padding:0;
+  background-color: #800020;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.translate-box {
+  float: right;
+  margin: 10px;
+}
+.translate-box select {
+  padding: 5px 10px;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
 }
 .title {
-text-align:center;
-color: #F5F5F5;
- margin-top: 20px;
+  text-align: center;
+  color: #F5F5F5;
+  margin-top: 20px;
+}
+.owner {
+  text-align: center;
+  margin: 10px 0;
+}
+.owner a {
+  color: #F5F5F5;
 }
 .main-table {
-text-align:center;
-color: #F5F5F5;
-margin: 20px auto;
+  text-align: center;
+  color: #F5F5F5;
+  margin: 20px auto;
 }
 .content {
-text-align:center;
-width: 400pt;
-margin: 0 auto;
+  text-align: center;
+  width: 400pt;
+  margin: 0 auto;
 }
 .img {
-width:200pt;
-height:200pt;
-margin: 20px auto;
+  width: 200pt;
+  height: 200pt;
+  margin: 20px auto;
+  display: block;
 }
 .mathimata {
-text-align:center;
-color: #F5F5F5;
+  text-align: left;
+  color: #F5F5F5;
+  display: inline-block;
+  padding-left: 20px;
 }
 .back-link {
-color:#F5F5F5;
-font-weight:bold;
+  color: #F5F5F5;
+  font-weight: bold;
 }
 </style>
 </head>
 <body>
-<h1 class="title"> Τα μαθήματα της σχολής </h1>
+<div class="translate-box">
+  <select id="langSelect" onchange="switchLanguage(this.value)">
+    <option value="el">Ελληνικά</option>
+    <option value="en">English</option>
+  </select>
+</div>
+
+<h1 class="title" id="main-title"> Τα μαθήματα της σχολής </h1>
   <div class="owner">
-    <a href="../index.html">Μαίρη Κάντα</a>
+    <a href="../index.html" id="nav-owner">Μαίρη Κάντα</a>
   </div>
-    
+      
 <hr>
 <table class="main-table"> 
 <tr>
 <td class="content">
-<img src="theatro2.jpg" class="img">
-<p> Τα μαθήματα θεάτρου που διάσκονται είναι τα ακόλουθα: </p>
+<img src="theatro2.jpg" class="img" alt="Theatro">
+<p id="intro-text"> Τα μαθήματα θεάτρου που διδάσκονται είναι τα ακόλουθα: </p>
 <ul class="mathimata">
-<li> Υποκριτική
-<p><strong> <em> Στόχος:</em> </strong> Να μάθεις να ζεις τον ρόλο,
-όχι απλά να τον "παίζεις".
-<strong> <em>
-Θα μάθεις:</em> </strong>τεχνικές ερμηνείας,
-ανάλυση χαρακτήρα, αυτοσχεδιασμό, σκηνική παρουσία.
-<strong> <em>
-Επίπεδο: </em> </strong>
-Αρχάριοι – Προχωρημένοι
-<strong> <em>
-Διάρκεια: </em> </strong>
-Εβδομαδιαία μαθήματα, όλη τη χρονιά </p>
+<li id="sub-acting"> Υποκριτική
+<p><strong id="act-goal-lbl"> <em> Στόχος:</em> </strong> <span id="act-goal-text">Να μάθεις να ζεις τον ρόλο, όχι απλά να τον "παίζεις".</span>
+<strong id="act-learn-lbl"> <em> Θα μάθεις:</em> </strong><span id="act-learn-text">τεχνικές ερμηνείας, ανάλυση χαρακτήρα, αυτοσχεδιασμό, σκηνική παρουσία.</span>
+<strong id="act-level-lbl"> <em> Επίπεδο: </em> </strong>
+<span id="act-level-text">Αρχάριοι – Προχωρημένοι</span>
+<strong id="act-dur-lbl"> <em> Διάρκεια: </em> </strong>
+<span id="act-dur-text">Εβδομαδιαία μαθήματα, όλη τη χρονιά</span> </p>
 
-<ol> 
+<ol id="act-list"> 
 <li> Υποκριτική Ι </li>
 <li> Υποκριτική ΙΙ </li>
 <li> Υποκριτική μπροστά στην κάμερα </li>
@@ -74,23 +102,17 @@ font-weight:bold;
 </li>
 </ul>
 <ul class="mathimata">
-<li> Φωνή & Λόγος
-<p> <strong> <em>
-Στόχος:</em> </strong>
- Να κάνεις τη φωνή σου εργαλείο 
- έκφρασης και δύναμης.
- <strong> <em>
-Θα μάθεις:</em> </strong>
- άρθρωση, σωστή αναπνοή, ένταση,
- χροιά και καθαρή εκφορά λόγου.
- <strong> <em>
-Επίπεδο:</em> </strong>
- Όλα τα επίπεδα
- <strong> <em>
-Διάρκεια:</strong> </em>
- Εβδομαδιαία </p>
+<li id="sub-voice"> Φωνή & Λόγος
+<p> <strong id="voice-goal-lbl"> <em> Στόχος:</em> </strong>
+ <span id="voice-goal-text">Να κάνεις τη φωνή σου εργαλείο έκφρασης και δύναμης.</span>
+ <strong id="voice-learn-lbl"> <em> Θα μάθεις:</em> </strong>
+ <span id="voice-learn-text">άρθρωση, σωστή αναπνοή, ένταση, χροιά και καθαρή εκφορά λόγου.</span>
+ <strong id="voice-level-lbl"> <em> Επίπεδο:</em> </strong>
+ <span id="voice-level-text">Όλα τα επίπεδα</span>
+ <strong id="voice-dur-lbl"> <em> Διάρκεια:</em> </strong>
+ <span id="voice-dur-text">Εβδομαδιαία</span> </p>
 
-<ol>
+<ol id="voice-list">
 <li> Ορθοφωνία </li>
 <li> Αναπνοή και Στήριξη φωνής </li>
 <li> Ανάγνωση και απαγγελία </li>
@@ -98,22 +120,15 @@ font-weight:bold;
 </li>
 </ul>
 <ul class="mathimata">
-<li> Θεατρική Γραφή 
+<li id="sub-writing"> Θεατρική Γραφή 
 <p>
-<strong> <em>
-Στόχος:</em> </strong>
- Να μετατρέπεις ιδέες σε
- ζωντανούς διαλόγους και 
- σκηνές.<strong> <em>
-Θα μάθεις:</em> </strong>
- δομή έργου, χαρακτήρες, πλοκή,
- θεατρικό διάλογο.<strong> <em>
-Επίπεδο: </em> </strong>
-Αρχάριοι & Προχωρημένοι<strong> <em>
-Διάρκεια:</em> </strong>
-Εβδομαδιαία</p>
+<strong id="write-goal-lbl"> <em> Στόχος:</em> </strong>
+ <span id="write-goal-text">Να μετατρέπεις ιδέες σε ζωντανούς διαλόγους και σκηνές.</span><strong id="write-learn-lbl"> <em> Θα μάθεις:</em> </strong>
+ <span id="write-learn-text">δομή έργου, χαρακτήρες, πλοκή, θεατρικό διάλογο.</span><strong id="write-level-lbl"> <em> Επίπεδο: </em> </strong>
+<span id="write-level-text">Αρχάριοι & Προχωρημένοι</span><strong id="write-dur-lbl"> <em> Διάρκεια:</em> </strong>
+<span id="write-dur-text">Εβδομαδιαία</span></p>
 
-<ol> 
+<ol id="write-list"> 
 <li> Θεατρική γραφή </li>
 <li> Δημιουργία χαρακτήρων </li>
 <li> Διάλογος στη σκηνή </li>
@@ -123,32 +138,26 @@ font-weight:bold;
 </li>
 </ul>
 <ul class="mathimata">
-<li> Άλλα μαθήματα 
-<ol>
+<li id="sub-other"> Άλλα μαθήματα 
+<ol id="other-list">
 <li> Σκηνοθεσία θεάτρου </li>
 <li> Σκηνοθεσία τηλεόρασης </li>
 <li> Θεατρικό παιχνίδι </li>
 </ol>
 </li>
 </ul>
-<img src="xoros2.jpg" class="img">
+<img src="xoros2.jpg" class="img" alt="Xoros">
 <ul class="mathimata">
-<li> Μαθήματα Χορού 
-<p> <strong> <em>
-Στόχος:</em> </strong>
- Να μάθεις να μιλάς με
- το σώμα σου.<strong> <em>
-Θα μάθεις:</em> </strong>
-σωματική έκφραση, ρυθμό, 
-ισορροπία, σκηνική κίνηση.
-<strong> <em>
-Επίπεδο:</em> </strong>
- Όλα τα επίπεδα<strong> <em>
- Διάρκεια: </em> </strong>
- Εβδομαδιαία </p>
+<li id="sub-dance"> Μαθήματα Χορού 
+<p> <strong id="dance-goal-lbl"> <em> Στόχος:</em> </strong>
+ <span id="dance-goal-text">Να μάθεις να μιλάς με το σώμα σου.</span><strong id="dance-learn-lbl"> <em> Θα μάθεις:</em> </strong>
+<span id="dance-learn-text">σωματική έκφραση, ρυθμό, ισορροπία, σκηνική κίνηση.</span>
+<strong id="dance-level-lbl"> <em> Επίπεδο:</em> </strong>
+ <span id="dance-level-text">Όλα τα επίπεδα</span>
+ <strong id="dance-dur-lbl"> <em> Διάρκεια: </em> </strong>
+ <span id="dance-dur-text">Εβδομαδιαία</span> </p>
 
-<ol>
-
+<ol id="dance-list">
 <li> Κλασικό μπαλέτο </li>
 <li> Σύγχρονος χορός </li>
 <li> Jazz </li>
@@ -161,15 +170,170 @@ font-weight:bold;
 </td>
 </tr>
 </table>
-<p align="right">
-<a href="index.html" class="back-link"> Επιστροφή στην αρχική </a> </p>
-  <a href="../index.html" class="back-link"> Μαίρη Κάντα </a>  
+<p align="right" style="padding-right: 20px;">
+<a href="index.html" class="back-link" id="back-home"> Επιστροφή στην αρχική </a> </p>
+  <div style="padding-left: 20px; padding-bottom: 20px;">
+  <a href="../index.html" class="back-link" id="footer-owner"> Μαίρη Κάντα </a>  
+  </div>
+
+<script>
+  function switchLanguage(lang) {
+    if (lang === 'en') {
+      document.getElementById('page-title').innerText = "School Lessons";
+      document.getElementById('nav-owner').innerText = "Mary Kanta";
+      document.getElementById('main-title').innerText = "School Lessons";
+      document.getElementById('intro-text').innerText = "The theater lessons taught are the following:";
+
+      document.getElementById('sub-acting').childNodes[0].nodeName === '#text' && (document.getElementById('sub-acting').firstChild.nodeValue = "Acting\n");
+      document.getElementById('act-goal-lbl').innerHTML = "<em>Goal:</em>";
+      document.getElementById('act-goal-text').innerText = " To learn to live the role, not just \"play\" it.";
+      document.getElementById('act-learn-lbl').innerHTML = " <em>You will learn:</em>";
+      document.getElementById('act-learn-text').innerText = " performance techniques, character analysis, improvisation, stage presence.";
+      document.getElementById('act-level-lbl').innerHTML = " <em>Level:</em>";
+      document.getElementById('act-level-text').innerText = " Beginners – Advanced";
+      document.getElementById('act-dur-lbl').innerHTML = " <em>Duration:</em>";
+      document.getElementById('act-dur-text').innerText = " Weekly classes, all year round";
+
+      const actList = document.getElementById('act-list');
+      actList.children[0].innerText = "Acting I";
+      actList.children[1].innerText = "Acting II";
+      actList.children[2].innerText = "Acting on Camera";
+      actList.children[3].innerText = "Improvisation";
+      actList.children[4].innerText = "Physical Theater";
+
+      document.getElementById('voice-goal-lbl').innerHTML = "<em>Goal:</em>";
+      document.getElementById('voice-goal-text').innerText = " To make your voice a tool of expression and power.";
+      document.getElementById('voice-learn-lbl').innerHTML = " <em>You will learn:</em>";
+      document.getElementById('voice-learn-text').innerText = " articulation, proper breathing, projection, tone, and clear speech delivery.";
+      document.getElementById('voice-level-lbl').innerHTML = " <em>Level:</em>";
+      document.getElementById('voice-level-text').innerText = " All levels";
+      document.getElementById('voice-dur-lbl').innerHTML = " <em>Duration:</em>";
+      document.getElementById('voice-dur-text').innerText = " Weekly";
+
+      const voiceList = document.getElementById('voice-list');
+      voiceList.children[0].innerText = "Orthophony / Voice Production";
+      voiceList.children[1].innerText = "Breathing and Voice Support";
+      voiceList.children[2].innerText = "Reading and Recitation";
+
+      document.getElementById('write-goal-lbl').innerHTML = "<em>Goal:</em>";
+      document.getElementById('write-goal-text').innerText = " To turn ideas into living dialogues and scenes.";
+      document.getElementById('write-learn-lbl').innerHTML = " <em>You will learn:</em>";
+      document.getElementById('write-learn-text').innerText = " play structure, characters, plot, theatrical dialogue.";
+      document.getElementById('write-level-lbl').innerHTML = " <em>Level:</em>";
+      document.getElementById('write-level-text').innerText = " Beginners & Advanced";
+      document.getElementById('write-dur-lbl').innerHTML = " <em>Duration:</em>";
+      document.getElementById('write-dur-text').innerText = " Weekly";
+
+      const writeList = document.getElementById('write-list');
+      writeList.children[0].innerText = "Theatrical Writing";
+      writeList.children[1].innerText = "Character Creation";
+      writeList.children[2].innerText = "Stage Dialogue";
+      writeList.children[3].innerText = "Adapting Literary Works for the Theater";
+      writeList.children[4].innerText = "Monologues";
+
+      document.getElementById('sub-other').firstChild.nodeValue = "Other classes\n";
+      const otherList = document.getElementById('other-list');
+      otherList.children[0].innerText = "Theater Directing";
+      otherList.children[1].innerText = "Television Directing";
+      otherList.children[2].innerText = "Theatrical Play / Drama Games";
+
+      document.getElementById('dance-goal-lbl').innerHTML = "<em>Goal:</em>";
+      document.getElementById('dance-goal-text').innerText = " To learn to speak with your body.";
+      document.getElementById('dance-learn-lbl').innerHTML = " <em>You will learn:</em>";
+      document.getElementById('dance-learn-text').innerText = " physical expression, rhythm, balance, stage movement.";
+      document.getElementById('dance-level-lbl').innerHTML = " <em>Level:</em>";
+      document.getElementById('dance-level-text').innerText = " All levels";
+      document.getElementById('dance-dur-lbl').innerHTML = " <em>Duration:</em>";
+      document.getElementById('dance-dur-text').innerText = " Weekly";
+
+      const danceList = document.getElementById('dance-list');
+      danceList.children[0].innerText = "Classical Ballet";
+      danceList.children[1].innerText = "Contemporary Dance";
+      danceList.children[2].innerText = "Jazz";
+      danceList.children[3].innerText = "Hip Hop";
+      danceList.children[4].innerText = "Latin";
+      danceList.children[5].innerText = "Flamenco";
+
+      document.getElementById('back-home').innerText = "Back to home";
+      document.getElementById('footer-owner').innerText = "Mary Kanta";
+    } else {
+      document.getElementById('page-title').innerText = "Τα μαθήματα της σχολής";
+      document.getElementById('nav-owner').innerText = "Μαίρη Κάντα";
+      document.getElementById('main-title').innerText = "Τα μαθήματα της σχολής";
+      document.getElementById('intro-text').innerText = "Τα μαθήματα θεάτρου που διδάσκονται είναι τα ακόλουθα:";
+
+      document.getElementById('act-goal-lbl').innerHTML = "<em>Στόχος:</em>";
+      document.getElementById('act-goal-text').innerText = " Να μάθεις να ζεις τον ρόλο, όχι απλά να τον \"παίζεις\".";
+      document.getElementById('act-learn-lbl').innerHTML = " <em>Θα μάθεις:</em>";
+      document.getElementById('act-learn-text').innerText = "τεχνικές ερμηνείας, ανάλυση χαρακτήρα, αυτοσχεδιασμό, σκηνική παρουσία.";
+      document.getElementById('act-level-lbl').innerHTML = " <em>Επίπεδο:</em>";
+      document.getElementById('act-level-text').innerText = " Αρχάριοι – Προχωρημένοι";
+      document.getElementById('act-dur-lbl').innerHTML = " <em>Διάρκεια:</em>";
+      document.getElementById('act-dur-text').innerText = " Εβδομαδιαία μαθήματα, όλη τη χρονιά";
+
+      const actList = document.getElementById('act-list');
+      actList.children[0].innerText = "Υποκριτική Ι";
+      actList.children[1].innerText = "Υποκριτική ΙΙ";
+      actList.children[2].innerText = "Υποκριτική μπροστά στην κάμερα";
+      actList.children[3].innerText = "Αυτοσχεδιασμός";
+      actList.children[4].innerText = "Σωματικό Θέατρο";
+
+      document.getElementById('voice-goal-lbl').innerHTML = "<em>Στόχος:</em>";
+      document.getElementById('voice-goal-text').innerText = " Να κάνεις τη φωνή σου εργαλείο έκφρασης και δύναμης.";
+      document.getElementById('voice-learn-lbl').innerHTML = " <em>Θα μάθεις:</em>";
+      document.getElementById('voice-learn-text').innerText = " άρθρωση, σωστή αναπνοή, ένταση, χροιά και καθαρή εκφορά λόγου.";
+      document.getElementById('voice-level-lbl').innerHTML = " <em>Επίπεδο:</em>";
+      document.getElementById('voice-level-text').innerText = " Όλα τα επίπεδα";
+      document.getElementById('voice-dur-lbl').innerHTML = " <em>Διάρκεια:</em>";
+      document.getElementById('voice-dur-text').innerText = " Εβδομαδιαία";
+
+      const voiceList = document.getElementById('voice-list');
+      voiceList.children[0].innerText = "Ορθοφωνία";
+      voiceList.children[1].innerText = "Αναπνοή και Στήριξη φωνής";
+      voiceList.children[2].innerText = "Ανάγνωση και απαγγελία";
+
+      document.getElementById('write-goal-lbl').innerHTML = "<em>Στόχος:</em>";
+      document.getElementById('write-goal-text').innerText = " Να μετατρέπεις ιδέες σε ζωντανούς διαλόγους και σκηνές.";
+      document.getElementById('write-learn-lbl').innerHTML = " <em>Θα μάθεις:</em>";
+      document.getElementById('write-learn-text').innerText = " δομή έργου, χαρακτήρες, πλοκή, θεατρικό διάλογο.";
+      document.getElementById('write-level-lbl').innerHTML = " <em>Επίπεδο:</em>";
+      document.getElementById('write-level-text').innerText = " Αρχάριοι & Προχωρημένοι";
+      document.getElementById('write-dur-lbl').innerHTML = " <em>Διάρκεια:</em>";
+      document.getElementById('write-dur-text').innerText = " Εβδομαδιαία";
+
+      const writeList = document.getElementById('write-list');
+      writeList.children[0].innerText = "Θεατρική γραφή";
+      writeList.children[1].innerText = "Δημιουργία χαρακτήρων";
+      writeList.children[2].innerText = "Διάλογος στη σκηνή";
+      writeList.children[3].innerText = "Διασκευή λογοτεχνικών έργων για το θέατρο";
+      writeList.children[4].innerText = "Μονόλογοι";
+
+      const otherList = document.getElementById('other-list');
+      otherList.children[0].innerText = "Σκηνοθεσία θεάτρου";
+      otherList.children[1].innerText = "Σκηνοθεσία τηλεόρασης";
+      otherList.children[2].innerText = "Θεατρικό παιχνίδι";
+
+      document.getElementById('dance-goal-lbl').innerHTML = "<em>Στόχος:</em>";
+      document.getElementById('dance-goal-text').innerText = " Να μάθεις να μιλάς με το σώμα σου.";
+      document.getElementById('dance-learn-lbl').innerHTML = " <em>Θα μάθεις:</em>";
+      document.getElementById('dance-learn-text').innerText = " σωματική έκφραση, ρυθμό, ισορροπία, σκηνική κίνηση.";
+      document.getElementById('dance-level-lbl').innerHTML = " <em>Επίπεδο:</em>";
+      document.getElementById('dance-level-text').innerText = " Όλα τα επίπεδα";
+      document.getElementById('dance-dur-lbl').innerHTML = " <em>Διάρκεια:</em>";
+      document.getElementById('dance-dur-text').innerText = " Εβδομαδιαία";
+
+      const danceList = document.getElementById('dance-list');
+      danceList.children[0].innerText = "Κλασικό μπαλέτο";
+      danceList.children[1].innerText = "Σύγχρονος χορός";
+      danceList.children[2].innerText = "Jazz";
+      danceList.children[3].innerText = "Hip Hop";
+      danceList.children[4].innerText = "Latin";
+      danceList.children[5].innerText = "Flamenco";
+
+      document.getElementById('back-home').innerText = "Επιστροφή στην αρχική";
+      document.getElementById('footer-owner').innerText = "Μαίρη Κάντα";
+    }
+  }
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
