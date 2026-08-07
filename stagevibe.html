@@ -1,39 +1,124 @@
-<html>
+<!DOCTYPE html>
+<html lang="el">
 <head>
-<title> StageVibe </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title"> StageVibe </title>
+<style>
+body { 
+  background-color: #800020;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #F5F5F5;
+}
+.translate-box {
+  float: right;
+  margin: 10px;
+}
+.translate-box select {
+  padding: 5px 10px;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.title {
+  text-align: center;
+  color: #F5F5F5;
+  margin-top: 20px;
+}
+.owner {
+  text-align: center;
+  margin: 10px 0;
+}
+.owner a {
+  color: #F5F5F5;
+}
+.main-table {
+  color: #F5F5F5;
+  margin: 0 auto;
+}
+.back-link {
+  color: #F5F5F5;
+  font-weight: bold;
+}
+</style>
 </head>
-<body style="background-color:#800020;">
-<h1 style="text-align:center; color:#F5F5F5;"> StageVibe </h1>
+<body>
+
+<div class="translate-box">
+  <select id="langSelect" onchange="switchLanguage(this.value)">
+    <option value="el">Ελληνικά</option>
+    <option value="en">English</option>
+  </select>
+</div>
+
+<h1 class="title" id="main-title"> StageVibe </h1>
   <div class="owner">
-    <a href="../index.html">Μαίρη Κάντα</a>
+    <a href="../index.html" id="nav-owner">Μαίρη Κάντα</a>
   </div>
-    
-<br/> <br/>
-<table border="0" align="center"style="color:#F5F5F5;">
+   
+<br/><br/>
+
+<table border="0" align="center" class="main-table">
 <tr>
-<td align="center" width=""400">
-<img src="xoros1.jpg" width="200" height="200">
-<p> "Για να χορέψετε πρέπει να ξεπεράσετε τον
+<td align="center" width="400">
+<img src="xoros1.jpg" width="200" height="200" alt="Xoros">
+<p id="quote-1"> "Για να χορέψετε πρέπει να ξεπεράσετε τον
  εαυτό σας. Να γίνετε μεγαλύτεροι, πιο όμορφοι
  πιο ισχυροί. Αυτή είναι η δύναμη, είναι η 
  δόξα στη γη και είναι δική σας για να την
- πάρετε"." <strong> <em> Στέισι Τούκι</em> </strong> </p> 
+ πάρετε." <strong> <em> Στέισι Τούκι</em> </strong> </p> 
  </td>
  </tr>
+ </table>
+
  <hr>
+
+ <table border="0" align="center" class="main-table">
  <tr>
  <td align="center" width="400">
- <img src="theatro1.jpg"width="200" height="200">
- <p> "Θεωρώ το θέατρo την μεγαλύτερη απ’ όλες 
+ <img src="theatro1.jpg" width="200" height="200" alt="Theatro">
+ <p id="quote-2"> "Θεωρώ το θέατρo την μεγαλύτερη απ’ όλες 
  τις μορφές τέχνης, τον πιο άμεσο τρόπο με τον 
  οποίο ένας άνθρωπος μπορεί να μοιραστεί με 
  κάποιον άλλο την ουσία του να είσαι 
- ανθρώπινο πλάσμα."<strong> <em> Oscar Wilde. </em> </strong> </p>
+ ανθρωπινό πλάσμα."<strong> <em> Oscar Wilde. </em> </strong> </p>
  </td>
  </tr>
- <hr>
- <tr>
+ </table>
 
-   <a href="../index.html" class="back-link"> Μαίρη Κάντα </a>  
+ <hr>
+
+<div style="padding-left: 20px; padding-bottom: 20px; padding-top: 10px;">
+<a href="../index.html" class="back-link" id="footer-owner"> Μαίρη Κάντα </a>    
+</div>
+
+<script>
+  function switchLanguage(lang) {
+    if (lang === 'en') {
+      document.getElementById('page-title').innerText = "StageVibe";
+      document.getElementById('nav-owner').innerText = "Mary Kanta";
+      document.getElementById('main-title').innerText = "StageVibe";
+      
+      document.getElementById('quote-1').innerHTML = "\"To dance, you have to put your heart on the floor. To dance, you have to push your limits. To become larger, more beautiful, more powerful. This is the power, this is the glory on earth and it is yours to take.\" <strong><em>Stacey Tookey</em></strong>";
+      document.getElementById('quote-2').innerHTML = "\"I consider theater the greatest of all art forms, the most immediate way in which a human being can share with another the sense of what it is to be a human being.\" <strong><em>Oscar Wilde.</em></strong>";
+      
+      document.getElementById('footer-owner').innerText = "Mary Kanta";
+    } else {
+      document.getElementById('page-title').innerText = "StageVibe";
+      document.getElementById('nav-owner').innerText = "Μαίρη Κάντα";
+      document.getElementById('main-title').innerText = "StageVibe";
+      
+      document.getElementById('quote-1').innerHTML = "\"Για να χορέψετε πρέπει να ξεπεράσετε τον εαυτό σας. Να γίνετε μεγαλύτεροι, πιο όμορφοι πιο ισχυροί. Αυτή είναι η δύναμη, είναι η δόξα στη γη και είναι δική σας για να την πάρετε\". <strong><em>Στέισι Τούκι</em></strong>";
+      document.getElementById('quote-2').innerHTML = "\"Θεωρώ το θέατρo την μεγαλύτερη απ’ όλες τις μορφές τέχνης, τον πιο άμεσο τρόπο με τον οποίο ένας άνθρωπος μπορεί να μοιραστεί με κάποιον άλλο την ουσία του να είσαι ανθρωπινό πλάσμα.\" <strong><em>Oscar Wilde.</em></strong>";
+      
+      document.getElementById('footer-owner').innerText = "Μαίρη Κάντα";
+    }
+  }
+</script>
 </body>
 </html>
