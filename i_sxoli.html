@@ -1,44 +1,78 @@
-<html>
+<!DOCTYPE html>
+<html lang="el">
 <head>
-<title> Η σχολή </title>
-  
-   
- 
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title"> Η σχολή </title>
 <style>
 body { 
-background-color:#800020;
+  background-color: #800020;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #F5F5F5;
+}
+.translate-box {
+  float: right;
+  margin: 10px;
+}
+.translate-box select {
+  padding: 5px 10px;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
 }
 .title {
-text-align:center;
-color:#F5F5F5;
+  text-align: center;
+  color: #F5F5F5;
+  margin-top: 20px;
+}
+.owner {
+  text-align: center;
+  margin: 10px 0;
+}
+.owner a {
+  color: #F5F5F5;
 }
 .main-table {
-color:#F5F5F5;
+  color: #F5F5F5;
+  margin: 0 auto;
 }
 .content {
-width:400px;
-margin: 0 auto;
-text-align:center;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
 }
 .img {
-width: 200px;
-height: 200px;
+  width: 200px;
+  height: 200px;
 }
 .benefits {
-text-align:center;
+  text-align: left;
+  display: inline-block;
+  padding-left: 20px;
 }
 .back-link {
-color: #F5F5F5;
-font-weight:bold;
+  color: #F5F5F5;
+  font-weight: bold;
 }
 </style>
 </head>
 <body>
 
-<h1 class="title"> Η σχολή </h1>
+<div class="translate-box">
+  <select id="langSelect" onchange="switchLanguage(this.value)">
+    <option value="el">Ελληνικά</option>
+    <option value="en">English</option>
+  </select>
+</div>
+
+<h1 class="title" id="main-title"> Η σχολή </h1>
   <div class="owner">
-    <a href="../index.html">Μαίρη Κάντα</a>
+    <a href="../index.html" id="nav-owner">Μαίρη Κάντα</a>
   </div>
 
 <hr>
@@ -46,29 +80,65 @@ font-weight:bold;
 <tr>
 <td class="content">
 
-<img src="sxoli1.jpg" class="img">
+<img src="sxoli1.jpg" class="img" alt="Sxoli">
 
-<p>
+<p id="desc-1">
 H <strong><em>StageVibe</em></strong> είναι μία σύγχρονη σχολή θεάτρου και έκφρασης, 
 αφιερωμένη στη δύναμη της φωνής, του σώματος και της φαντασίας. 
 Δημιουργήθηκε από μία παρέα πέντε ατόμων το 2015 που ήθελαν να προσφέρουν 
 έναν ασφαλή χώρο όπου όλοι μπορούν να εκφραστούν ελεύθερα και να ανακαλύψουν την φωνή τους.</p>
 
-<p>Στη <strong><em>StageVibe</em></strong> η τέχνη δεν διδάσκεται αλλά βιώνεται. 
+<p id="desc-2">Στη <strong><em>StageVibe</em></strong> η τέχνη δεν διδάσκεται αλλά βιώνεται. 
 Οι μαθητές μέσα από την υποκριτική, τη κίνηση, τη θεατρική γραφή και το θεατρικό παιχνίδι:</p>
 
 <ul class="benefits">
-<li>Θα καλλιεργήσουν την αυτογνωσία και την αυτοπεποίθηση</li>
-<li>Θα ενισχύσουν τη δημιουργική σκέψη και τη φαντασία</li>
-<li>Θα διδαχθούν τον σεβασμό και τη συνεργασία</li>
+<li id="benefit-1">Θα καλλιεργήσουν την αυτογνωσία και την αυτοπεποίθηση</li>
+<li id="benefit-2">Θα ενισχύσουν τη δημιουργική σκέψη και τη φαντασία</li>
+<li id="benefit-3">Θα διδαχθούν τον σεβασμό και τη συνεργασία</li>
 </ul>
 
 </td>
 </tr>
 </table>
-<p align="right">
-<a href="index.html"class="back-link"> Επιστροφή στην αρχική </a> </p>
-   <a href="../index.html" class="back-link"> Μαίρη Κάντα </a>
-   
+
+<p align="right" style="padding-right: 20px;">
+<a href="index.html" class="back-link" id="back-home"> Επιστροφή στην αρχική </a> </p>
+<div style="padding-left: 20px; padding-bottom: 20px;">
+<a href="../index.html" class="back-link" id="footer-owner"> Μαίρη Κάντα </a>
+</div>
+
+<script>
+  function switchLanguage(lang) {
+    if (lang === 'en') {
+      document.getElementById('page-title').innerText = "The School";
+      document.getElementById('nav-owner').innerText = "Mary Kanta";
+      document.getElementById('main-title').innerText = "The School";
+      
+      document.getElementById('desc-1').innerHTML = "<strong><em>StageVibe</em></strong> is a modern theater and expression school, dedicated to the power of voice, body, and imagination. It was created by a group of five friends in 2015 who wanted to provide a safe space where everyone can express themselves freely and discover their voice.";
+      document.getElementById('desc-2').innerHTML = "At <strong><em>StageVibe</em></strong> art is not taught but experienced. Through acting, movement, theatrical writing, and theatrical play, students will:";
+      
+      document.getElementById('benefit-1').innerText = "Cultivate self-awareness and self-confidence";
+      document.getElementById('benefit-2').innerText = "Enhance creative thinking and imagination";
+      document.getElementById('benefit-3').innerText = "Learn respect and cooperation";
+
+      document.getElementById('back-home').innerText = "Back to home";
+      document.getElementById('footer-owner').innerText = "Mary Kanta";
+    } else {
+      document.getElementById('page-title').innerText = "Η σχολή";
+      document.getElementById('nav-owner').innerText = "Μαίρη Κάντα";
+      document.getElementById('main-title').innerText = "Η σχολή";
+      
+      document.getElementById('desc-1').innerHTML = "H <strong><em>StageVibe</em></strong> είναι μία σύγχρονη σχολή θεάτρου και έκφρασης, αφιερωμένη στη δύναμη της φωνής, του σώματος και της φαντασίας. Δημιουργήθηκε από μία παρέα πέντε ατόμων το 2015 που ήθελαν να προσφέρουν έναν ασφαλή χώρο όπου όλοι μπορούν να εκφραστούν ελεύθερα και να ανακαλύψουν την φωνή τους.";
+      document.getElementById('desc-2').innerHTML = "Στη <strong><em>StageVibe</em></strong> η τέχνη δεν διδάσκεται αλλά βιώνεται. Οι μαθητές μέσα από την υποκριτική, τη κίνηση, τη θεατρική γραφή και το θεατρικό παιχνίδι:";
+      
+      document.getElementById('benefit-1').innerText = "Θα καλλιεργήσουν την αυτογνωσία και την αυτοπεποίθηση";
+      document.getElementById('benefit-2').innerText = "Θα ενισχύσουν τη δημιουργική σκέψη και τη φαντασία";
+      document.getElementById('benefit-3').innerText = "Θα διδαχθούν τον σεβασμό και τη συνεργασία";
+
+      document.getElementById('back-home').innerText = "Επιστροφή στην αρχική";
+      document.getElementById('footer-owner').innerText = "Μαίρη Κάντα";
+    }
+  }
+</script>
 </body>
 </html>
